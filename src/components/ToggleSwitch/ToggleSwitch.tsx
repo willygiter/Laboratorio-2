@@ -5,12 +5,14 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 export interface ToggleSwitchProps {
   label?: string;
   defaultChecked?: boolean;
+  color?: 'primary' | 'secondary' | 'success';
   onChange?: (checked: boolean) => void;
 }
 
 export default function ToggleSwitch({
   label = 'Toggle',
   defaultChecked = false,
+  color = 'primary',
   onChange,
 }: ToggleSwitchProps) {
   const [checked, setChecked] = useState(defaultChecked);
@@ -28,7 +30,7 @@ export default function ToggleSwitch({
           checked={checked}
           onChange={handleChange}
           data-testid="toggle-switch"
-          color="primary"
+          color={color}
         />
       }
       label={label}
